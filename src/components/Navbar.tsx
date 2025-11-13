@@ -17,29 +17,30 @@ const mainNavLinks = [
 
 export default function Navbar() {
   return (
-    <div className="fixed top-0 w-full flex grid w-full grid-cols-3 p-4">
-      <div className="flex items-center justify-center">
+    <div className="px-14 fixed top-0 w-full flex grid w-full grid-cols-3 p-4">
+      <div className="flex items-center justify-start">
         <Link
           className="text-xl"
           href="/"
         >YNYDev</Link>
       </div>
       <div className="flex items-center justify-center">
-        <div className="grid grid-cols-3 gap-2 items-center border border-[#444444] rounded-full px-2 py-2">
+        <div className="grid grid-cols-3 gap-2 items-center border border-[#444444] rounded-full p-1 overflow-hidden">
           {mainNavLinks.map((links) => (
-            <Link
-              key={links.href}
-              className="flex justify-center px-4 py-1 hover:bg-white hover:text-black rounded-full duration-300"
-              href={links.title}
-            >{links.title}</Link>
+            <div key={links.href} className="hover:shadow-[0_0_100px_50px_rgba(255,_255,_255,_0.2)] rounded-full duration-300">
+              <Link
+                className="flex justify-center px-5 py-1 hover:shadow-[inset_50px_50px_100px_50px_rgba(255,_255,_255,_0.2)] rounded-full duration-300"
+                href={links.title}
+              >{links.title}</Link>
+            </div>
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-end">
         <Link
           href="https://discord.com/users/1436998440386297886"
         >
-          <span className="p-3 rounded-full bg-[#cfcfcf] hover:bg-white text-black duration-300">Contact</span>
+          <span className="px-5 py-2 rounded-full bg-[#cfcfcf] hover:bg-white text-black duration-300">Contact</span>
         </Link>
       </div>
     </div>
