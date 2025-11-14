@@ -5,8 +5,8 @@ import { Space_Mono } from "next/font/google";
 
 const mainNavLinks = [
   { "text": "Home", "href": "/" },
-  { "text": "About", "href": "/about" },
-  { "text": "Works", "href": "/works" },
+  { "text": "About", "href": "#about" },
+  { "text": "Works", "href": "#works" },
 ];
 
 const spaceMono = Space_Mono({ weight: "400" });
@@ -29,13 +29,13 @@ export default function Navbar() {
         >
           <span
             className={`
-              block h-[1px] w-full bg-white transition-all duration-300
+              block h-[1px] w-full bg-white transition-all duration-700
               ${isMenuOpen ? "rotate-45 translate-y-[7.5px]" : ""}
             `}
           />
           <span
             className={`
-              block h-[1px] w-full bg-white transition-all duration-300
+              block h-[1px] w-full bg-white transition-all duration-700
               ${isMenuOpen ? "-rotate-45 -translate-y-[7.5px]" : ""}
             `}
           />
@@ -43,7 +43,7 @@ export default function Navbar() {
         <nav className={`
           ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}
           fixed inset-0 z-100 flex items-center justify-center
-          bg-[rgba(0,0,0,0.75)] w-full h-full duration-500 grid grid-rows-1 md:grid-cols-2
+          bg-[rgba(0,0,0,0.75)] w-full h-full duration-700 grid grid-rows-1 md:grid-cols-2
           backdrop-blur-sm
         `}>
           <div className="flex justify-center">
@@ -53,6 +53,7 @@ export default function Navbar() {
                   key={links.href}
                   href={links.href}
                   className={`${spaceMono.className} text-6xl group-hover:text-[#a1a1a1] hover:text-white duration-300`}
+                  onClick={() => setIsMenuOpen(prevstate => !prevstate)}
                 >
                   {links.text}
                 </Link>
