@@ -1,18 +1,9 @@
 import Link from "next/link";
 
 const mainNavLinks = [
-  {
-    "title": "Home",
-    "href": "/"
-  },
-  {
-    "title": "About",
-    "href": "/about"
-  },
-  {
-    "title": "Works",
-    "href": "/works"
-  },
+  { "title": "Home", "href": "/" },
+  { "title": "About", "href": "/about" },
+  { "title": "Works", "href": "/works" },
 ];
 
 export default function Navbar() {
@@ -30,7 +21,7 @@ export default function Navbar() {
             <div key={links.href} className="hover:shadow-[0_0_100px_50px_rgba(255,_255,_255,_0.2)] rounded-full duration-300">
               <Link
                 className="flex justify-center px-5 py-1 hover:shadow-[inset_50px_50px_100px_50px_rgba(255,_255,_255,_0.2)] rounded-full duration-300"
-                href={links.title}
+                href={links.href}
               >{links.title}</Link>
             </div>
           ))}

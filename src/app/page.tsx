@@ -1,3 +1,4 @@
+import Button from "@/components/ui/Button";
 import Link from "next/link";
 
 export default function Home() {
@@ -9,16 +10,8 @@ export default function Home() {
           <p className="text-2xl text-[#cbcbcb]">I am YNYDev</p>
         </div>
         <div className="flex items-center gap-4">
-          <Link
-            className="border border-[#444444] px-4 py-2 rounded-full hover:shadow-[inset_50px_50px_100px_50px_rgba(255,_255,_255,_0.08)] duration-300"
-            href="/about"
-          >About me</Link>
-          <Link
-            className="px-4 py-2 rounded-full bg-[#cfcfcf] text-black hover:bg-white duration-300"
-            href="/contact"
-          >
-            Contact me
-          </Link>
+          <Button variant="primary" href="/about">About me</Button>
+          <Button variant="secondary" href="/contact">Contact me</Button>
         </div>
       </div>
     </div>
